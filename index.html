@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Rotina de um Preocupado</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="bg-3d-scene">
+    <div class="shape-3d shape-sphere"></div>
+    <div class="shape-3d shape-rhombus"></div>
+    <div class="shape-3d shape-cube"></div>
+    <div class="shape-3d shape-cone"></div>
+  </div>
+
+  <div class="container">
+    <header>
+      <h1 class="school-title">A Rotina de um Preocupado</h1>
+      <p class="subtitle">Gestor de Rotina Diária & Performance</p>
+    </header>
+
+    <main class="cards-grid">
+
+      <!-- CARD 1: MANHÃ -->
+      <a href="manha.html" class="card" style="text-decoration: none;">
+        <div>
+          <div class="card-icon">🌅</div>
+          <div class="card-period">Manhã • 06:30 - 12:30</div>
+          <h2 class="card-title">Acordar & Escola</h2>
+          <p class="card-desc">Foco acadêmico, aulas de exatas e preparação matinal rápida.</p>
+        </div>
+        <span class="btn-open">Ver Detalhes</span>
+      </a>
+
+      <!-- CARD 2: TARDE -->
+      <a href="tarde.html" class="card" style="text-decoration: none;">
+        <div>
+          <div class="card-icon">💼</div>
+          <div class="card-period">Tarde • 14:00 - 18:00</div>
+          <h2 class="card-title">Trabalho / Estágio</h2>
+          <p class="card-desc">Desenvolvimento profissional, responsabilidades diárias e aprendizado prático.</p>
+        </div>
+        <span class="btn-open">Ver Detalhes</span>
+      </a>
+
+      <!-- CARD 3: NOITE -->
+      <a href="noite.html" class="card" style="text-decoration: none;">
+        <div>
+          <div class="card-icon">🏋️‍♂️</div>
+          <div class="card-period">Noite • 19:00 - 20:30</div>
+          <h2 class="card-title">Academia & Treino</h2>
+          <p class="card-desc">Fortalecimento muscular, hipertrofia e condicionamento físico geral.</p>
+        </div>
+        <span class="btn-open">Ver Detalhes</span>
+      </a>
+
+      <!-- CARD 4: HOBBY -->
+      <a href="hobby.html" class="card" style="text-decoration: none;">
+        <div>
+          <div class="card-icon">🧤</div>
+          <div class="card-period">Especial • Hobby & Paixão</div>
+          <h2 class="card-title">Futsal: Goleiro</h2>
+          <p class="card-desc">Treino específico de reflexos, posicionamento na área e partidas da semana.</p>
+        </div>
+        <span class="btn-open">Ver Detalhes</span>
+      </a>
+
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener('mousemove', (e) => {
+      const shapes = document.querySelectorAll('.shape-3d');
+      const mouseX = e.clientX / window.innerWidth;
+      const mouseY = e.clientY / window.innerHeight;
+      shapes.forEach((shape, index) => {
+        const speed = (index + 1) * 15;
+        const x = (window.innerWidth - mouseX * speed * 10) / 100;
+        const y = (window.innerHeight - mouseY * speed * 10) / 100;
+        shape.style.transform = `translate3d(${x}px, ${y}px, 0px) rotate(${x * 2}deg)`;
+      });
+    });
+  </script>
+</body>
+</html>
