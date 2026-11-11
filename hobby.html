@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hobby - A Rotina de um Preocupado</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="bg-3d-scene">
+    <div class="shape-3d shape-sphere"></div>
+    <div class="shape-3d shape-rhombus"></div>
+    <div class="shape-3d shape-cube"></div>
+    <div class="shape-3d shape-cone"></div>
+  </div>
+
+  <div class="container">
+    <header>
+      <div class="card-period">Especial • Hobby & Paixão</div>
+      <h1 class="school-title">Futsal: Goleiro</h1>
+      <p class="subtitle">Guardião das Redes 🧤</p>
+    </header>
+
+    <main class="card" style="max-width: 800px; margin: 0 auto; cursor: default; transform: none;">
+      <div style="font-size: 3rem; margin-bottom: 20px;">🧤</div>
+      <p class="card-desc" style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 25px;">
+        Treinos e jogos focados na posição de Goleiro. Trabalha reflexos rápidos, elasticidade, coragem na saída de gol e liderança de equipe.
+      </p>
+
+      <h2 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--blue-primary);">Checklist de Atividades</h2>
+      <ul class="modal-checklist">
+        <li>Treino de tempo de reação e reflexos com bola</li>
+        <li>Exercícios de queda lateral e amortecimento seguro</li>
+        <li>Trabalho de pés e reposição rápida de bola com as mãos</li>
+        <li>Jogos comunitários / Torneios de Futsal</li>
+      </ul>
+
+      <div style="margin-top: 30px;">
+        <a href="index.html" class="btn-open" style="text-decoration: none; display: inline-block;">← Voltar ao Início</a>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener('mousemove', (e) => {
+      const shapes = document.querySelectorAll('.shape-3d');
+      const mouseX = e.clientX / window.innerWidth;
+      const mouseY = e.clientY / window.innerHeight;
+      shapes.forEach((shape, index) => {
+        const speed = (index + 1) * 15;
+        const x = (window.innerWidth - mouseX * speed * 10) / 100;
+        const y = (window.innerHeight - mouseY * speed * 10) / 100;
+        shape.style.transform = `translate3d(${x}px, ${y}px, 0px) rotate(${x * 2}deg)`;
+      });
+    });
+  </script>
+</body>
+</html>
